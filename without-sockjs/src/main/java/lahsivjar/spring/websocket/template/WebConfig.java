@@ -12,19 +12,19 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @Configuration
 @EnableWebSocket
 public class WebConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer {
-	
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/index").setViewName("index");
-	}
-	
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/index").setViewName("index");
+    }
+
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(webSocketHandler(), "/handler")
-        	// For ease of testing allow all origins (NOTE: in practice it should be, in most cases, avoided)
-        	.setAllowedOrigins("*");
+                // for ease of testing allow all origins
+                .setAllowedOrigins("*");
     }
-    
+
     @Bean
     public WebSocketHandler webSocketHandler() {
         return new CustomWebSocketHandler();
