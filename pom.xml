@@ -37,6 +37,7 @@
 
   <modules>
     <module>without-sockjs</module>
+    <module>with-sockjs</module>
   </modules>
 </project>
   
