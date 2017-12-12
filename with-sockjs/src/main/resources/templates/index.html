@@ -1,60 +1,11 @@
-<html>
-<head>
-<title>WebSocket Template with SockJs and STOMP</title>
-<script src="https://cdn.jsdelivr.net/sockjs/1/sockjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-<script type="text/javascript">
-    // <![CDATA[
-    var stompClient = null;
-    function connect() {
-        if (stompClient === null) {
-            var sock = new SockJS("http://localhost:8080/handler");
-            stompClient = Stomp.over(sock);
-            stompClient.connect({}, function(frame) {
-                console.log('connected');
-                document.getElementById("connect").disabled = true;
-                document.getElementById("disconnect").disabled = false;
-                // Subscribe to all
-                stompClient.subscribe('/topic/all', function(frame) {
-                    console.log("Recieved on topic all: " + frame.body);
-                });
-            });
-        }
-    }
-
-    function sendMessage() {
-        var message = document.getElementById('message').value;
-        stompClient.send("/app/all", {}, message);
-    }
-
-    function disconnect() {
-        if (stompClient !== null) {
-            stompClient.disconnect();
-        }
-        console.log('disconnected');
-    }
-    //]]>
-</script>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Spring WebSockets with ReactJs</title>
 </head>
-
-<body onload="disconnect()">
-    <div>
-        <div>
-           <input type="text" id="handle"
-                placeholder="Choose a handle" />
-        </div>
-           <br />
-        <div>
-            <button id="connect" onclick="connect();">Connect</button>
-            <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
-        </div>
-            <br />
-        <div>
-            <input type="text" id="message" placeholder="Write a message..." />
-            <button onclick="sendMessage();">Send</button>
-            <p id="response"></p>
-        </div>
-    </div>
+<body>
+    <div id="root"></div>
+    <script th:src="@{~/dynamic_resources/bundle.js}"></script>
 </body>
-
 </html>
