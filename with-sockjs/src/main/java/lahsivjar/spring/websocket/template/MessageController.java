@@ -1,5 +1,8 @@
 package lahsivjar.spring.websocket.template;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -15,8 +18,11 @@ public class MessageController {
      */
     @MessageMapping("/all")
     @SendTo("/topic/all")
-    public String post(@Payload String message) {
-        return "ACK: " + message;
+    public Map<String, String> post(@Payload String message) {
+    	final Map<String, String> messageMap = new HashMap<String, String>();
+    	messageMap.put("message", "Ack: " + message);
+    	messageMap.put("author", "pong");
+        return messageMap;
     }
 
 }

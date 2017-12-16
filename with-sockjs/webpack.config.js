@@ -2,10 +2,10 @@ var path = require("path");
 
 module.exports = {
   entry: "./src/main/webapp/js/index.js",
-  devtool: "sourcemaps",
+  devtool: "inline-source-map",
   output: {
-    path: __dirname,
-    filename: "./src/main/resources/dynamic_resources/bundle.js"
+    path: path.join(__dirname, "/src/main/resources/dynamic_resources"),
+    filename: "bundle.js"
   },
   module: {
     loaders: [
@@ -13,7 +13,7 @@ module.exports = {
         test: path.join(__dirname, "./src/main/webapp/js"),
         loader: "babel-loader",
         query: {
-          presets: ["env", "react"]
+          presets: ["env", "react", "stage-2"]
         }
       }
     ]
