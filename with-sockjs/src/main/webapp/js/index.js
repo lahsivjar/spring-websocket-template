@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      clientConnected: false,
       messages: [{
         "message": "How you doin'!",
         "author": "pong"
@@ -31,10 +32,13 @@ class App extends React.Component {
     return (
       <div>
         <TalkBox topic="react-websocket-template" currentUser="ping" messages={ this.state.messages }
-          onSendMessage={ this.sendMessage } />
+          onSendMessage={ this.sendMessage } connected={ this.state.clientConnected }/>
 
         <SockJsClient url="http://localhost:8080/handler" topics={["/topic/all"]}
-          onMessage={ this.onMessageReceive } ref={ (client) => { this.clientRef = client }} />
+          onMessage={ this.onMessageReceive } ref={ (client) => { this.clientRef = client }}
+          onConnect={ () => { this.setState({ clientConnected: true }) } }
+          onDisconnect={ () => { this.setState({ clientConnected: false }) } }
+          debug={ false }/>
       </div>
     );
   }
