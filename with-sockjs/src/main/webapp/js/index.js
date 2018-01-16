@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   render() {
-    const wsSourceUrl = window.location.protocol + "//" + window.location.hostname + "/handler";
+    const wsSourceUrl = window.location.protocol + "//" + window.location.host + "/handler";
     return (
       <div>
         <TalkBox topic="react-websocket-template" currentUser="ping" messages={ this.state.messages }
@@ -46,4 +46,3 @@ class App extends React.Component {
 }
 
 ReactDom.render(<App />, document.getElementById("root"));
-
