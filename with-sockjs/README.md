@@ -18,7 +18,7 @@ mvn spring-boot:run
 
 https://react-websocket.herokuapp.com/index
 
-## React UI components used
+## React components used
 
 * [react-stomp](https://github.com/lahsivjar/react-stomp)
 * [react-talk](https://github.com/lahsivjar/react-talk)
