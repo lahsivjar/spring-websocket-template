@@ -35,6 +35,7 @@
     "webpack": "~3.4.1"
   },
   "dependencies": {
+    "randomstring": "^1.1.5",
     "react-stomp": "^2.1.1",
     "react-talk": "^0.3.1"
   }
