@@ -17,6 +17,7 @@
   </parent>
 
   <properties>
+    <springboot.version>1.5.4.RELEASE</springboot.version>
     <springframework.version>4.2.2.RELEASE</springframework.version>
   </properties>
   
