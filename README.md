@@ -1,4 +1,5 @@
 # spring-websocket-template
+[![Build Status](https://travis-ci.org/lahsivjar/spring-websocket-template.svg?branch=master)](https://travis-ci.org/lahsivjar/spring-websocket-template)
 
 Provides a template for [spring](https://spring.io/) websocket usage (with and without SockJS support)
 
