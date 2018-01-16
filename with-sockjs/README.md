@@ -6,17 +6,13 @@ The template provides WebSocket integration with [Spring Boot](https://projects.
 
 1. Installation
 ```
-mvn install && npm install
+mvn install
 ```
-2. Run webpack
-```
-webpack
-```
-3. Start spring boot server
+2. Start spring boot server
 ```
 mvn spring-boot:run
 ```
-4. Open http://localhost:8080/index in browser
+3. Open http://localhost:8080/index in browser
 
 ## React components used
 
