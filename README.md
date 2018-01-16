@@ -6,12 +6,12 @@ Provides a template for [spring](https://spring.io/) websocket usage (with and w
 The project provides 2 modules:
 
 * `without-sockjs`: Plain websocket integration with [Spring Boot](https://projects.spring.io/spring-boot/)
-* `with-sockjs`: Websocket integration with [Spring Boot](https://projects.spring.io/spring-boot/) for backend and [React](https://reactjs.org/) for frontend. Checkout [README](with-sockjs/README.md) for more information
+* `with-sockjs`: Websocket integration with [Spring Boot](https://projects.spring.io/spring-boot/) for backend and [React](https://reactjs.org/) for frontend. Checkout [README](with-sockjs/README.md) for more information. This module is also deployed at: https://react-websocket.herokuapp.com/index
 
 ## Installation
 
 ```
-mvn install && (cd with-sockjs && npm install)
+mvn install
 ```
 
 ## Issues
