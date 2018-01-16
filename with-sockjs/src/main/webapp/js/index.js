@@ -3,9 +3,13 @@ import ReactDom from "react-dom";
 import SockJsClient from "react-stomp";
 import { TalkBox } from "react-talk";
 
+const randomstring = require("randomstring");
+
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // randomUserId is used to emulate a unique user id for this demo usage
+    this.randomUserId = randomstring.generate();
     this.state = {
       clientConnected: false,
       messages: [{
@@ -22,17 +26,15 @@ class App extends React.Component {
   }
 
   sendMessage = (msg, selfMsg) => {
-    this.setState(prevState => ({
-      messages: [...prevState.messages, selfMsg]
-    }));
-    this.clientRef.sendMessage("/app/all", msg);
+    this.clientRef.sendMessage("/app/all", JSON.stringify(selfMsg));
   }
 
   render() {
     const wsSourceUrl = window.location.protocol + "//" + window.location.host + "/handler";
     return (
       <div>
-        <TalkBox topic="react-websocket-template" currentUser="ping" messages={ this.state.messages }
+        <TalkBox topic="react-websocket-template"
+          currentUser={ this.randomUserId } messages={ this.state.messages }
           onSendMessage={ this.sendMessage } connected={ this.state.clientConnected }/>
 
         <SockJsClient url={ wsSourceUrl } topics={["/topic/all"]}
