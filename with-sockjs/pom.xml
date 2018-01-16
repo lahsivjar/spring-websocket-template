@@ -61,6 +61,7 @@
           <filesets>
             <fileset>
               <directory>src/main/resources/dynamic_resources</directory>
+              <directory>node_modules</directory>
             </fileset>
           </filesets>
         </configuration>
