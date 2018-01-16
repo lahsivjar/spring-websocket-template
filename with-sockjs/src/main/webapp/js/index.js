@@ -29,12 +29,13 @@ class App extends React.Component {
   }
 
   render() {
+    const wsSourceUrl = window.location.protocol + "//" + window.location.hostname + "/handler";
     return (
       <div>
         <TalkBox topic="react-websocket-template" currentUser="ping" messages={ this.state.messages }
           onSendMessage={ this.sendMessage } connected={ this.state.clientConnected }/>
 
-        <SockJsClient url="http://localhost:8080/handler" topics={["/topic/all"]}
+        <SockJsClient url={ wsSourceUrl } topics={["/topic/all"]}
           onMessage={ this.onMessageReceive } ref={ (client) => { this.clientRef = client }}
           onConnect={ () => { this.setState({ clientConnected: true }) } }
           onDisconnect={ () => { this.setState({ clientConnected: false }) } }
