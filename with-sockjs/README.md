@@ -14,6 +14,10 @@ mvn spring-boot:run
 ```
 3. Open http://localhost:8080/index in browser
 
+## Demonstration
+
+https://react-websocket.herokuapp.com/index
+
 ## React components used
 
 * [react-stomp](https://github.com/lahsivjar/react-stomp)
