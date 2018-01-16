@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "react-stomp": "^2.1.1",
-    "react-talk": "^0.3.0"
+    "react-talk": "^0.3.1"
   }
 }
