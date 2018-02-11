@@ -35,8 +35,10 @@
     "webpack": "~3.4.1"
   },
   "dependencies": {
+    "json-fetch": "^7.4.0",
     "randomstring": "^1.1.5",
-    "react-stomp": "^2.1.1",
-    "react-talk": "^0.4.1"
+    "react-stomp": "^3.0.0",
+    "react-talk": "^1.0.0",
+    "username-generator": "^1.0.3"
   }
 }
