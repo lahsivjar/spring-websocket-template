@@ -37,7 +37,7 @@
   "dependencies": {
     "json-fetch": "^7.4.0",
     "randomstring": "^1.1.5",
-    "react-stomp": "^3.1.0",
+    "react-stomp": "^3.2.0",
     "react-talk": "^1.0.0",
     "username-generator": "^1.0.3"
   }
