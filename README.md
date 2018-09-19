@@ -1,5 +1,5 @@
 # spring-websocket-template
-[![Build Status](https://travis-ci.org/lahsivjar/spring-websocket-template.svg?branch=master)](https://travis-ci.org/lahsivjar/spring-websocket-template)
+[![Build Status](https://travis-ci.org/lahsivjar/spring-websocket-template.svg?branch=master)](https://travis-ci.org/lahsivjar/spring-websocket-template) [![Greenkeeper badge](https://badges.greenkeeper.io/lahsivjar/spring-websocket-template.svg)](https://greenkeeper.io/)
 
 Provides a template for [spring](https://spring.io/) websocket usage (with and without SockJS support)
 
