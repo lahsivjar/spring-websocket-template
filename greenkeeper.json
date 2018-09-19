@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "with-sockjs/package.json"
+      ]
+    }
+  }
+}
