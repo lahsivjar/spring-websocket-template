@@ -13,12 +13,12 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.4.RELEASE</version>
-    <relativePath></relativePath>
+    <relativePath/>
   </parent>
 
   <properties>
     <springboot.version>1.5.4.RELEASE</springboot.version>
-    <springframework.version>4.2.2.RELEASE</springframework.version>
+    <springframework.version>5.2.18.RELEASE</springframework.version>
   </properties>
   
   <dependencyManagement>
